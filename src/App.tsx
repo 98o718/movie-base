@@ -1,19 +1,18 @@
 import React from 'react'
-
 import { Global, css } from '@emotion/core'
 import emotionNormalize from 'emotion-normalize'
-import { Switch, Route, Redirect } from 'wouter'
+import { Switch, Route, Redirect, Router } from 'wouter'
 import { Layout, Header } from './components'
 import { MainPage, SearchPage, FilmDetailsPage, FavoritesPage } from './pages'
 
 function App() {
   return (
-    <>
+    <Router base={process.env.REACT_APP_BASENAME!}>
       <Global
         styles={css`
           ${emotionNormalize}
           html,
-          body {
+            body {
             padding: 0;
             margin: 0;
             min-height: 100%;
@@ -89,7 +88,7 @@ function App() {
           </Route>
         </Switch>
       </Layout>
-    </>
+    </Router>
   )
 }
 
