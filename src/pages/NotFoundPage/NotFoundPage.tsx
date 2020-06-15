@@ -4,7 +4,15 @@ import { NotFoundPageWrapper, NotFoundPageMessage } from './NotFoundPage.styles'
 const NotFoundPage = () => {
   return (
     <NotFoundPageWrapper>
-      <NotFoundPageMessage>😟 404 😟</NotFoundPageMessage>
+      <NotFoundPageMessage>
+        <span role="img" aria-label="sad emoji">
+          😟
+        </span>{' '}
+        404{' '}
+        <span role="img" aria-label="sad emoji">
+          😟
+        </span>
+      </NotFoundPageMessage>
     </NotFoundPageWrapper>
   )
 }
