@@ -13,6 +13,7 @@ export const FilmCardPosterWrapper = styled.div`
   border-radius: 15px;
   overflow: hidden;
   position: relative;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 
   &:hover + h3 {
     color: #faee1c;
