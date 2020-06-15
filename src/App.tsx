@@ -3,7 +3,13 @@ import { Global, css } from '@emotion/core'
 import emotionNormalize from 'emotion-normalize'
 import { Switch, Route, Redirect, Router } from 'wouter'
 import { Layout, Header } from './components'
-import { MainPage, SearchPage, FilmDetailsPage, FavoritesPage } from './pages'
+import {
+  MainPage,
+  SearchPage,
+  FilmDetailsPage,
+  FavoritesPage,
+  NotFoundPage,
+} from './pages'
 
 function App() {
   return (
@@ -85,6 +91,9 @@ function App() {
           </Route>
           <Route path="/">
             <MainPage page={1} />
+          </Route>
+          <Route path="/:rest*">
+            <NotFoundPage />
           </Route>
         </Switch>
       </Layout>
