@@ -31,10 +31,10 @@
     "typescript": "3.8",
     "wouter": "^2.4.0"
   },
-  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "yarn build && cp build/index.html build/200.html && surge build https://movie-base.surge.sh",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
