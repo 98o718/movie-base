@@ -68,7 +68,7 @@ const FilmDetails = ({
               }
             </FilmDetailsItem>
           )}
-          {film.runtime && (
+          {!!film.runtime && (
             <FilmDetailsItem>
               <FilmDetailsInfoHeading>
                 продолжительность:
