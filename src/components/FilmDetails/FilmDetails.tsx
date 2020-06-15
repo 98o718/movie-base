@@ -85,7 +85,7 @@ const FilmDetails = ({
           {addToFavs && !isExist && (
             <Button
               style={{ width: 'fit-content', marginTop: 15 }}
-              variant="outlined"
+              variant="contained"
               color="secondary"
               onClick={() => addToFavs(film)}
             >
@@ -95,7 +95,7 @@ const FilmDetails = ({
           {removeFromFavs && isExist && (
             <Button
               style={{ width: 'fit-content', marginTop: 15 }}
-              variant="outlined"
+              variant="contained"
               color="secondary"
               onClick={() => removeFromFavs(film.id)}
             >
