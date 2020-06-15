@@ -31,7 +31,7 @@
     "typescript": "3.8",
     "wouter": "^2.4.0"
   },
-  "homepage": "https://98o718.github.io/movie-base",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
