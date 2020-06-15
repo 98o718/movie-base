@@ -26,9 +26,11 @@ const FavoritesPage = ({ page = 1 }: FavoritesPageProps) => {
       <Helmet>
         <title>Избранные{` | страница ${page} `} – The Movie Base</title>
       </Helmet>
-      <FavoritesPageFilterWrapper>
-        <Filter search={search} handleChange={handleChange} />
-      </FavoritesPageFilterWrapper>
+      {(!!shortFilms.length || search) && (
+        <FavoritesPageFilterWrapper>
+          <Filter search={search} handleChange={handleChange} />
+        </FavoritesPageFilterWrapper>
+      )}
       <FilmsGrid
         films={shortFilms}
         loading={false}
@@ -37,14 +39,16 @@ const FavoritesPage = ({ page = 1 }: FavoritesPageProps) => {
         checkExistance={checkExistance}
         removeFromFavorites={removeFromFavs}
       />
-      <PaginationWrapper
-        page={p}
-        scrollTop
-        error={false}
-        loading={false}
-        setPage={setPage}
-        total={total}
-      />
+      {!!shortFilms.length && (
+        <PaginationWrapper
+          page={p}
+          scrollTop
+          error={false}
+          loading={false}
+          setPage={setPage}
+          total={total}
+        />
+      )}
     </>
   )
 }
