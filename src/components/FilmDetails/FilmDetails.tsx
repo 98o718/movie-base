@@ -15,16 +15,16 @@ import { ActionTypes } from '../../model/types'
 
 type FilmDetailsProps = {
   film: Details
-  addToFavorites?: (film: Film | Details) => ActionTypes
-  removeFromFavorites?: (id: number) => ActionTypes
+  addToFavs?: (film: Film | Details) => ActionTypes
+  removeFromFavs?: (id: number) => ActionTypes
   isExist: boolean
 }
 
 const FilmDetails = ({
   film,
-  addToFavorites,
+  addToFavs,
   isExist,
-  removeFromFavorites,
+  removeFromFavs,
 }: FilmDetailsProps) => {
   return (
     <>
@@ -82,22 +82,22 @@ const FilmDetails = ({
           {film.overview && (
             <FilmDetailsDescription>{film.overview}</FilmDetailsDescription>
           )}
-          {addToFavorites && !isExist && (
+          {addToFavs && !isExist && (
             <Button
               style={{ width: 'fit-content', marginTop: 15 }}
               variant="outlined"
               color="secondary"
-              onClick={() => addToFavorites(film)}
+              onClick={() => addToFavs(film)}
             >
               Добавить в избранное
             </Button>
           )}
-          {removeFromFavorites && isExist && (
+          {removeFromFavs && isExist && (
             <Button
               style={{ width: 'fit-content', marginTop: 15 }}
               variant="outlined"
               color="secondary"
-              onClick={() => removeFromFavorites(film.id)}
+              onClick={() => removeFromFavs(film.id)}
             >
               Убрать из избранного
             </Button>
