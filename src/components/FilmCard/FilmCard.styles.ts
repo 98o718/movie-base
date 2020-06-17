@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { Image } from '..'
 
 export const FilmCardWrapper = styled.div`
   display: flex;
@@ -44,4 +45,13 @@ export const FilmCardAddition = styled.h4`
   color: #cfd8dc;
   font-size: 12px;
   margin-top: 0;
+`
+
+export const FilmCardPoster = styled(Image)`
+  transition: 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `

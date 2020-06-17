@@ -5,10 +5,9 @@ import {
   FilmCardAddition,
   FilmCardPosterWrapper,
   FavButton,
+  FilmCardPoster,
 } from './FilmCard.styles'
 import { ShortFilm } from '../../types'
-import { Image } from '..'
-import { ClassNames } from '@emotion/core'
 import { useLocation } from 'wouter'
 import { IconButton } from '@material-ui/core'
 import { StarBorder, Star } from '@material-ui/icons'
@@ -49,27 +48,15 @@ const FilmCard = ({
             )}
           </IconButton>
         </FavButton>
-        <ClassNames>
-          {({ css }) => (
-            <Image
-              className={css`
-                transition: 0.2s ease;
-                cursor: pointer;
-
-                &:hover {
-                  transform: scale(1.1);
-                }
-              `}
-              src={
-                !poster
-                  ? require('../../assets/no-poster.jpg')
-                  : `${process.env.REACT_APP_MINIPOSTER_URL}${poster}`
-              }
-              alt="Film's poster"
-              onClick={() => setLocation(`/film/${id}`)}
-            />
-          )}
-        </ClassNames>
+        <FilmCardPoster
+          src={
+            !poster
+              ? require('../../assets/no-poster.jpg')
+              : `${process.env.REACT_APP_MINIPOSTER_URL}${poster}`
+          }
+          alt="Film's poster"
+          onClick={() => setLocation(`/film/${id}`)}
+        />
       </FilmCardPosterWrapper>
       <FilmCardTitle onClick={() => setLocation(`/film/${id}`)}>
         {title}

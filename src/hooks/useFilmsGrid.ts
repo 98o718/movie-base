@@ -13,10 +13,6 @@ export const useFilmsGrid = (startPage = 1, url: string, base = '/') => {
   const [, setLocation] = useLocation()
 
   useEffect(() => {
-    setPage(startPage)
-  }, [startPage])
-
-  useEffect(() => {
     setLocation(page === 1 ? base : `${base}page/${page}`)
   }, [page, setLocation, base])
 
